@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Venda</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <nav-bar></nav-bar>
+
+        <router-view></router-view>
+
+        <!-- <h1>{{title}}</h1>
+
+
+        <form>
+            <h2>Nova Venda</h2>
+            <input v-model="venda.data" type="date" placeholder="Data da venda">
+            <input v-model="venda.total" type="number" placeholder="Total da venda">
+            <select>
+                <option value="Paulo Arruda">Paulo Arruda</option>
+                <option value="Ingrid Fernades">Ingrid Fernades</option>
+                <option value="Afranio Arruda">Afranio Arruda</option>
+            </select>    
+        </form> -->
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="services/ClientService.js"></script>    
+    <script src="componets/FormClient.js"></script>
+    <script src="componets/ListClient.js"></script>
+    <script src="componets/NavBar.js"></script>
+    <script src="views/Home.js"></script>
+    <script src="views/Clientes.js"></script>
+    <script>
+
+        const router = new VueRouter({
+            mode: 'history',
+            routes: [
+                {path: "/", component: Home},
+                {path: "/clientes", component: Cliente}
+            ]
+        })
+
+        new Vue({
+            el: "#app",
+            router,
+            components: {
+                NavBar
+            },
+            data: {
+                title: "Vendas",
+                venda: {}
+            }
+        });       
+    </script>
+</body>
+</html>
