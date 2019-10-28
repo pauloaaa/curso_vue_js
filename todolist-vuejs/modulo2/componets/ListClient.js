@@ -11,6 +11,7 @@ const ListClient = Vue.component('list-client', {
                     <td>{{cli.name}}</td>
                     <td>{{cli.email}}</td>
                     <td>{{cli.cpf}}</td>
+                    <td><button @click="goToDetail(cli)">Detalhes</button></td>
                 </tr>
             </tbody>            
         </table>
@@ -23,6 +24,9 @@ const ListClient = Vue.component('list-client', {
     methods: {
         listAll() {
             this.clients = ClientService.findAll()
+        },
+        goToDetail(client) {
+            this.$router.push({name: 'detalhe', params: client})
         }
     },
     created() {

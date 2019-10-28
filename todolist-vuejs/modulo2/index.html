@@ -38,13 +38,15 @@
     <script src="componets/NavBar.js"></script>
     <script src="views/Home.js"></script>
     <script src="views/Clientes.js"></script>
+    <script src="views/DetalheCliente.js"></script>
     <script>
 
         const router = new VueRouter({
-            mode: 'history',
+            // mode: 'history',
             routes: [
                 {path: "/", component: Home},
-                {path: "/clientes", component: Cliente}
+                {path: "/clientes", component: Cliente},
+                {path: "/detalhe-cliente", name: "detalhe", component: DetalheCliente}
             ]
         })
 
