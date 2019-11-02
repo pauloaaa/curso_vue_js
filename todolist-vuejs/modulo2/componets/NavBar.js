@@ -1,12 +1,8 @@
 const NavBar = Vue.component("nav-bar", {
     template: /* html */ `
-    <nav>
-        <router-link to="/">
-            <div>Home</div>
-        </router-link>
-        <router-link to="/clientes">
-            <div>Cliente</div>
-        </router-link>
-    </nav>
+    <v-app-bar dark app color="blue accent-4">
+        <v-btn text to="/">Home</v-btn>
+        <v-btn text to="/clientes">Cliente</v-btn>
+    </v-app-bar>
     `
 })
