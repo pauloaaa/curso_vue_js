@@ -10,6 +10,10 @@
     </v-app-bar>
     <v-content>
       <router-view></router-view>
+      <v-snackbar v-model="snackbar" bottom :color="color" right :timeout="timeout" vertical>
+          {{ text }}
+          <v-btn dark text @click="snackbar = false">Fechar</v-btn>
+      </v-snackbar>
     </v-content>
   </v-app>
 </template>
@@ -22,7 +26,21 @@ export default {
     
   },
   data: () => ({
-    //
+      
   }),
+  computed: {
+    snackbar() {
+      return this.$store.state.snackbar.show
+    },
+    timeout() {
+      return this.$store.state.snackbar.timeout
+    },
+    text() {
+      return this.$$store.state.snackbar.text
+    },
+    color() {
+      return this.$store.state.snackbar.color
+    }
+  }
 };
 </script>
