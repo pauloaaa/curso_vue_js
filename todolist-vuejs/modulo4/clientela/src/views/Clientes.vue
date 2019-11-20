@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h1>Página de Clientes</h1>
+    <div>        
         <form-client></form-client>        
     </div>
 </template>
