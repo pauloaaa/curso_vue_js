@@ -10,9 +10,9 @@
     </v-app-bar>
     <v-content>
       <router-view></router-view>
-      <v-snackbar v-model="snackbar" bottom :color="color" right :timeout="timeout" vertical>
+      <v-snackbar v-model="snackbar" bottom :color="color" right :timeout="0" vertical>
           {{ text }}
-          <v-btn dark text @click="snackbar = false">Fechar</v-btn>
+          <v-btn dark text @click="$store.dispatch('closeSnackbar')">Fechar</v-btn>
       </v-snackbar>
     </v-content>
   </v-app>
@@ -31,12 +31,9 @@ export default {
   computed: {
     snackbar() {
       return this.$store.state.snackbar.show
-    },
-    timeout() {
-      return this.$store.state.snackbar.timeout
-    },
+    },    
     text() {
-      return this.$$store.state.snackbar.text
+      return this.$store.state.snackbar.text
     },
     color() {
       return this.$store.state.snackbar.color

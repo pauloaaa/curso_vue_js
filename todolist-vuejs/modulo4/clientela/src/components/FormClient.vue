@@ -49,9 +49,8 @@
                 </v-col>
             </v-row>
             <v-row class="px-3">
-                <v-btn color="error" @click="save">Cancelar</v-btn>
-                <v-spacer></v-spacer>
-                <v-btn color="success">Salvar</v-btn>                
+                <v-btn color="success" @click="save">Salvar</v-btn>
+                <v-btn color="error" >Cancelar</v-btn>                               
             </v-row>
         </v-form>
     </v-container>
@@ -81,8 +80,8 @@ export default {
                 this.findingAddress = false
             }
         },
-        save() {
-            
+        save() {            
+            this.$store.dispatch('showSuccessSnackbar', 'Salvo com sucesso!')
         }
     }
 }
