@@ -1,6 +1,9 @@
 const Express = require('express')
+const BodyParser = require('body-parser')
 
 const app = new Express()
+
+app.user(BodyParser.json())
 
 
 app.get('/', (req, res) => {
@@ -8,6 +11,23 @@ app.get('/', (req, res) => {
         nome: "Paulo",
         idade: 34
     })
+})
+
+app.get('/clientes', (req, res) => {
+    res.json([
+        {
+            name: "Paulo Arruda",
+            email: "paulo@gmail.com"
+        },
+        {
+            name: "Ingrides Fernandes",
+            email: "ingrides@gmail.com"
+        }
+    ])
+})
+
+app.post('/clientes', (req, res) => {
+
 })
 
 app.listen(3000, () => {
